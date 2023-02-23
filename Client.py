@@ -11,3 +11,12 @@ class Client:
 
         def GetHashCode(self):
         return hash(self.codePostal + self.telephone)
+
+
+        def Equals(self, obj):
+        if isinstance(obj, Client):
+            return (self.nom == obj.nom and self.adresse == obj.adresse and self.ville == obj.ville
+                    and self.province == obj.province and self.codePostal == obj.codePostal
+                    and self.telephone == obj.telephone and self.courriel == obj.courriel)
+        else:
+            return False
