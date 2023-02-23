@@ -20,3 +20,13 @@ class Client:
                     and self.telephone == obj.telephone and self.courriel == obj.courriel)
         else:
             return False
+
+
+        def ToString(self):
+        return f"Nom: {self.nom}, 
+                Adresse: {self.adresse}, 
+                Ville: {self.ville}, 
+                Province: {self.province}, 
+                Code Postal: {self.codePostal}, 
+                Telephone: {self.telephone}, 
+                Courriel: {self.courriel}"
