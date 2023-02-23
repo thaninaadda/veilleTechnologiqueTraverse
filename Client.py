@@ -7,6 +7,9 @@ class Client:
         self.codePostal = codePostal
         self.telephone = telephone
         self.courriel = courriel
+        self.numeroIdentification : numeroIdentification
+        self.sexe= sexe
+        self.dateDeNaissance= dateDeNaissance
 
 
         def GetHashCode(self):
