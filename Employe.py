@@ -1,14 +1,12 @@
 
-import tkinter as tk
-class Personne:
-    def __init__(self, name, address, city, province, postal_code, phone, email):
-        self.name = name
-        self.address = address
-        self.city = city
-        self.province = province
-        self.postal_code = postal_code
-        self.phone = phone
-        self.email = email
+import tkinter as tk;
+import Personne;
+class Employe(Personne):
+    def __init__(self, nom, adresse, ville, province, codePostal, telephone, courriel, noEmploye, nAS,dateArret):
+        super().__init__(nom, adresse, ville, province, codePostal, telephone, courriel)
+        self.noEmploye = noEmploye
+        self.nAS = nAS
+        self.dateArret = dateArret
 
 class UserRegistrationForm:
     def __init__(self, master):
@@ -71,6 +69,31 @@ class UserRegistrationForm:
         self.email_entry = tk.Entry(master)
         self.email_entry.grid(row=6, column=1)
 
+        # Label pour le noEmploye
+        self.noEmp_label = tk.Label(master, text="noEmploye")
+        self.noEmp_label.grid(row=6, column=0)
+
+        # Champ pour le noEmploye
+        self.noEmp_entry = tk.Entry(master)
+        self.noEmp_entry.grid(row=6, column=1)
+
+
+        # Label pour le nAS
+        self.nas_label = tk.Label(master, text="nAS")
+        self.nas_label.grid(row=6, column=0)
+
+        # Champ pour le nAS
+        self.nas_entry = tk.Entry(master)
+        self.nas_entry.grid(row=6, column=1)
+
+        # Label pour le dateArret
+        self.dateStop_label = tk.Label(master, text="dateArret")
+        self.dateStop_label.grid(row=6, column=0)
+
+        # Champ pour le dateArret
+        self.dateStop_entry = tk.Entry(master)
+        self.dateStop_entry.grid(row=6, column=1)
+
         # Bouton de soumission
         self.submit_button = tk.Button(master, text="S'inscrire", command=self.submit)
         self.submit_button.grid(row=7, column=0, columnspan=2)
@@ -84,6 +107,9 @@ class UserRegistrationForm:
         postal_code = self.postal_code_entry.get()
         phone = self.phone_entry.get()
         email = self.email_entry.get()
+        noEmp = self.noEmp_entry.get()
+        nas = self.nas_entry.get()
+        dateStop= self.dateStop_entry.get()
 
         # Afficher les valeurs dans la console
         print(f"Nom: {name}")
@@ -93,6 +119,9 @@ class UserRegistrationForm:
         print(f"Code postal: {postal_code}")
         print(f"Téléphone: {phone}")
         print(f"Courriel: {email}")
+        print(f"no employee: {noEmp}")
+        print(f"Numero assurance social : {nas}")
+        print(f"date de demission: {dateStop}")
 
 
 if __name__ == "__main__":
