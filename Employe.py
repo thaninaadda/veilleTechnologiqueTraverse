@@ -8,7 +8,7 @@ class Employe(Personne):
         self.nAS = nAS
         self.dateArret = dateArret
 
-class UserRegistrationForm:
+class EmployeeRegistrationForm:
     def __init__(self, master):
         self.master = master
         master.title("Formulaire d'inscription Personne:")
@@ -126,5 +126,5 @@ class UserRegistrationForm:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    form = UserRegistrationForm(root)
+    form = EmployeeRegistrationForm(root)
     root.mainloop()

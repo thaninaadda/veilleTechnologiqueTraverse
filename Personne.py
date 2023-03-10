@@ -1,13 +1,13 @@
 
 import tkinter as tk
 class Personne:
-    def __init__(self, name, address, city, province, postal_code, phone, email):
-        self.name = name
-        self.address = address
-        self.city = city
+    def __init__(self, nom, addresse, ville, province, postal_code, telephone, email):
+        self.nom = nom
+        self.addresse = addresse
+        self.ville = ville
         self.province = province
         self.postal_code = postal_code
-        self.phone = phone
+        self.telephone = telephone
         self.email = email
 
 class UserRegistrationForm:
@@ -16,28 +16,28 @@ class UserRegistrationForm:
         master.title("Formulaire d'inscription Personne:")
 
         # Label pour le nom
-        self.name_label = tk.Label(master, text="Nom")
-        self.name_label.grid(row=0, column=0)
+        self.nom_label = tk.Label(master, text="Nom")
+        self.nom_label.grid(row=0, column=0)
 
         # Champ pour le nom
-        self.name_entry = tk.Entry(master)
-        self.name_entry.grid(row=0, column=1)
+        self.nom_entry = tk.Entry(master)
+        self.nom_entry.grid(row=0, column=1)
 
         # Label pour l'adresse
-        self.address_label = tk.Label(master, text="Adresse")
-        self.address_label.grid(row=1, column=0)
+        self.addresse_label = tk.Label(master, text="Adresse")
+        self.addresse_label.grid(row=1, column=0)
 
         # Champ pour l'adresse
-        self.address_entry = tk.Entry(master)
-        self.address_entry.grid(row=1, column=1)
+        self.addresse_entry = tk.Entry(master)
+        self.addresse_entry.grid(row=1, column=1)
 
         # Label pour la ville
-        self.city_label = tk.Label(master, text="Ville")
-        self.city_label.grid(row=2, column=0)
+        self.ville_label = tk.Label(master, text="Ville")
+        self.ville_label.grid(row=2, column=0)
 
         # Champ pour la ville
-        self.city_entry = tk.Entry(master)
-        self.city_entry.grid(row=2, column=1)
+        self.ville_entry = tk.Entry(master)
+        self.ville_entry.grid(row=2, column=1)
 
         # Label pour la province
         self.province_label = tk.Label(master, text="Province")
@@ -60,8 +60,8 @@ class UserRegistrationForm:
         self.phone_label.grid(row=5, column=0)
 
         # Champ pour le téléphone
-        self.phone_entry = tk.Entry(master)
-        self.phone_entry.grid(row=5, column=1)
+        self.telephone_entry = tk.Entry(master)
+        self.telephone_entry.grid(row=5, column=1)
 
         # Label pour le courriel
         self.email_label = tk.Label(master, text="Courriel")
@@ -77,21 +77,23 @@ class UserRegistrationForm:
 
     def submit(self):
         # Récupérer les valeurs du formulaire
-        name = self.name_entry.get()
-        address = self.address_entry.get()
-        city = self.city_entry.get()
+        nom = self.nom_entry.get()
+        addresse = self.addresse_entry.get()
+        ville = self.ville_entry.get()
         province = self.province_entry.get()
         postal_code = self.postal_code_entry.get()
-        phone = self.phone_entry.get()
+        telephone = self.telephone_entry.get()
         email = self.email_entry.get()
 
+        # Créer une instance de la classe Perosnne avec les valeurs du formulaire
+        personne = Personne(nom, addresse, ville, province, postal_code, telephone,email)
         # Afficher les valeurs dans la console
-        print(f"Nom: {name}")
-        print(f"Adresse: {address}")
-        print(f"Ville: {city}")
+        print(f"Nom: {nom}")
+        print(f"Adresse: {addresse}")
+        print(f"Ville: {ville}")
         print(f"Province: {province}")
         print(f"Code postal: {postal_code}")
-        print(f"Téléphone: {phone}")
+        print(f"Téléphone: {telephone}")
         print(f"Courriel: {email}")
 
 
@@ -99,3 +101,6 @@ if __name__ == "__main__":
     root = tk.Tk()
     form = UserRegistrationForm(root)
     root.mainloop()
+
+
+   
