@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class Traversier:
+class Traverse:
     def __init__(self, noTraverse, dateHeure, villeDepart, employeInscription, listeVehicule, listeClient):
 
         self.noTraverse = noTraverse
@@ -10,7 +10,7 @@ class Traversier:
         self.listeVehicule = listeVehicule or []
         self.listeClient = listeClient or []
 
-class TraversierRegistrationForm:
+class TraverseRegistrationForm:
     def __init__(self, master):
         self.master = master
         master.title("Formulaire d'inscription d'un traversier")
@@ -62,7 +62,7 @@ class TraversierRegistrationForm:
        
 
         # Créer une instance de la classe Vehicle avec les valeurs du formulaire
-        traversier = Traversier(noTraverse, dateHeure, villeDepart, employeInscription)
+        traverse = Traverse(noTraverse, dateHeure, villeDepart, employeInscription)
 
         # Afficher les valeurs du formulaire dans la console
         print(f"Numéro de traverse:, {noTraverse}")
@@ -74,5 +74,5 @@ class TraversierRegistrationForm:
 
 if __name__ == "__main__":
         root = tk.Tk()
-        form = TraversierRegistrationForm(root)
+        form = TraverseRegistrationForm(root)
         root.mainloop()
