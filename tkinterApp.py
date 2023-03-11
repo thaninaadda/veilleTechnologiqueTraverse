@@ -78,9 +78,6 @@ class StartPage(tk.Frame):
                              command=lambda: controller.show_frame(Traversier))
         button6.grid(row=6, column=6, padx=10, pady=10)
         
-			
-
-
 class TypeTraverse(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -119,7 +116,15 @@ class TypeTraverse(tk.Frame):
         
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
-        button2.grid(row=2, column=6, padx=10, pady=10)     
+        button2.grid(row=2, column=6, padx=10, pady=10) 
+
+		# Bouton de soumission
+        self.submit_button = tk.Button(self, text="S'inscrire", command=self.submit)
+        self.submit_button.grid(row=7, column=0, columnspan=2)
+    def submit(self):
+        nom = self.nom_entry.get()
+        nombreRoue = self.nombreRoue_entry.get()
+        prixTraverse = self.prixTraverse_entry.get()  
 
 class Traverse(tk.Frame):
     def __init__(self, parent, controller):
@@ -172,6 +177,17 @@ class Traverse(tk.Frame):
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
+        
+		# Bouton de soumission
+        self.submit_button = tk.Button(self, text="S'inscrire", command=self.submit)
+        self.submit_button.grid(row=7, column=0, columnspan=2)
+    def submit(self):
+        
+        # Récupérer les valeurs du formulaire
+        noTraverse = self.noTraverse_entry.get()
+        dateHeure = self.dateHeure_entry.get()
+        villeDepart = self.villeDepart_entry.get()
+        employeInscription= self.employeInscription_entry.get()
 
 class Traversier(tk.Frame):
     def __init__(self, parent, controller):
@@ -229,6 +245,18 @@ class Traversier(tk.Frame):
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
         
+		# Bouton de soumission
+        self.submit_button = tk.Button(self, text="S'inscrire", command=self.submit)
+        self.submit_button.grid(row=7, column=0, columnspan=2)
+    def submit(self):
+        
+        # Récupérer les valeurs du formulaire
+        nom = self.nom_entry.get()
+        capaciteVehicule = self.capaciteVehicule_entry.get()
+        capacitePersonneDepart = self.capacitePersonneDepart_entry.get()
+        anneeFabrication= self.anneeFabrication_entry.get()
+        dateMiseService= self.dateMiseService_entry.get()
+        
 class Vehicule(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -264,11 +292,21 @@ class Vehicule(tk.Frame):
         # grid
         label.grid(row=0, column=4, padx=10, pady=10)
 
-        
+        # Bouton de soumission
+        self.submit_button = tk.Button(self, text="S'inscrire", command=self.submit)
+        self.submit_button.grid(row=7, column=0, columnspan=2)
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
-
+    def submit(self):
+        # Récupérer les valeurs du formulaire
+        noIdentification = self.noIdentification_entry.get()
+        marque = self.marque_entry.get()
+        modele = self.modele_entry.get()
+        couleur = self.couleur_entry.get()
+        annee = self.annee_entry.get()
+        immatriculation = self.immatriculation_entry.get()
+        
 class Client(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -331,7 +369,8 @@ class Client(tk.Frame):
         # Champ pour le courriel
         self.email_entry = tk.Entry(self)
         self.email_entry.grid(row=6, column=1)
-
+        
+		
         # putting the grid in its place by using
         # grid
         label.grid(row=0, column=4, padx=10, pady=10)
@@ -345,6 +384,22 @@ class Client(tk.Frame):
                              command=lambda: controller.show_frame(Employe))
         button4.grid(row=3, column=6, padx=10, pady=10)
         
+        # Bouton de soumission
+        self.submit_button = tk.Button(self, text="S'inscrire", command=self.submit)
+        self.submit_button.grid(row=7, column=0, columnspan=2)
+    def submit(self):
+        # Récupérer les valeurs du formulaire
+        name = self.name_entry.get()
+        address = self.address_entry.get()
+        city = self.city_entry.get()
+        province = self.province_entry.get()
+        postal_code = self.postal_code_entry.get()
+        phone = self.phone_entry.get()
+        email = self.email_entry.get()
+        noEmp = self.noEmp_entry.get()
+        nas = self.nas_entry.get()
+        dateStop= self.dateStop_entry.get()
+         
 class Employe(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -407,7 +462,7 @@ class Employe(tk.Frame):
         # Champ pour le courriel
         self.email_entry = tk.Entry(self)
         self.email_entry.grid(row=6, column=1)
-
+        
         # putting the grid in its place by using
         # grid
         label.grid(row=0, column=4, padx=10, pady=10)
@@ -421,9 +476,21 @@ class Employe(tk.Frame):
                              command=lambda: controller.show_frame(Client))
         button3.grid(row=3, column=6, padx=10, pady=10)
         
-
-
-
+		# Bouton de soumission
+        self.submit_button = tk.Button(self, text="S'inscrire", command=self.submit)
+        self.submit_button.grid(row=7, column=0, columnspan=2)
+    def submit(self):
+        # Récupérer les valeurs du formulaire
+        name = self.name_entry.get()
+        address = self.address_entry.get()
+        city = self.city_entry.get()
+        province = self.province_entry.get()
+        postal_code = self.postal_code_entry.get()
+        phone = self.phone_entry.get()
+        email = self.email_entry.get()
+        noEmp = self.noEmp_entry.get()
+        nas = self.nas_entry.get()
+        dateStop= self.dateStop_entry.get()
 
 
 
