@@ -1,9 +1,16 @@
+#
+# Nom du Fichier : tkinterApp.py
+# Auteur: hanina Adda
+# But: contient toutes les interfaces.
+#
+#
 import tkinter as tk
 from tkinter import ttk
 
-
+# represente la police choisit pour le projet .
 LARGEFONT =("Verdana", 20)
 
+#Classe tkinterApp, cette classe appel la page Principale au debut du programme.
 class tkinterApp(tk.Tk):
 	
 	# __init__ function for class tkinterApp
@@ -35,7 +42,7 @@ class tkinterApp(tk.Tk):
 			
 
 			frame.grid(row = 0, column = 0, sticky ="nsew")
-
+        #demarrage de la page StartPage
 		self.show_frame(StartPage)
 
 	# to display the current frame passed as
@@ -44,84 +51,92 @@ class tkinterApp(tk.Tk):
 		frame = self.frames[cont]
 		frame.tkraise()
 
-# first window frame startpage
+# Page StartPage
 
 class StartPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-		
+		# Titre du Projet.
         label = ttk.Label(self, text="projet Traverse", font=LARGEFONT)
         label.grid(row=0, column=4, padx=10, pady=10)
 
+		# Bouton Type Traverse qui appel justement la page Type Traverse.
         button1 = ttk.Button(self, text="Type Traverse",
                              command=lambda: controller.show_frame(TypeTraverse))
         button1.grid(row=1, column=6, padx=10, pady=10)
-        
+
+        # Bouton Type Traverse qui appel justement la page Vehicule.
         button2 = ttk.Button(self, text="Vehicule",
                              command=lambda: controller.show_frame(Vehicule))
         button2.grid(row=2, column=6, padx=10, pady=10)
         
+        # Bouton Type Traverse qui appel justement la page Traverse.
         button3 = ttk.Button(self, text="Traverse",
                              command=lambda: controller.show_frame(Traverse))
         button3.grid(row=3, column=6, padx=10, pady=10)
         
+        # Bouton Type Traverse qui appel justement la page Client.
         button4 = ttk.Button(self, text="Client",
                              command=lambda: controller.show_frame(Client))
         button4.grid(row=4, column=6, padx=10, pady=10)
-        
+
+        # Bouton Type Traverse qui appel justement la page Employee.
         button5 = ttk.Button(self, text="Employee",
                              command=lambda: controller.show_frame(Employe))
         button5.grid(row=5, column=6, padx=10, pady=10)
-        
+
+        # Bouton Type Traverse qui appel justement la page Traversier.
         button6 = ttk.Button(self, text="Traversier",
                              command=lambda: controller.show_frame(Traversier))
         button6.grid(row=6, column=6, padx=10, pady=10)
 
-   
+
+#Page Traversier
 class Traversier(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-		# label of frame Layout 2
+		# Label pour le titre
         label = ttk.Label(self, text="Ajout d'un Traversier", font=LARGEFONT)
-		# Label pour le no Traverse
-        self.nom_label = tk.Label(self, text="nom traversier")
+        
+		# Label pour le Nom du Traversier
+        self.nom_label = tk.Label(self, text="Nom Du Traversier")
         self.nom_label.grid(row=0, column=0)
 
-        # Champ pour le no Traverse
+        # Champ pour le Nom du Traversier
         self.nom_entry = tk.Entry(self)
         self.nom_entry.grid(row=0, column=1)
 
-        # Label pour la date et Heure
-        self.capaciteVehicule_label = tk.Label(self, text="capacite du Vehicule")
+        # Label pour la Capacite du Vehicule
+        self.capaciteVehicule_label = tk.Label(self, text="Capacite du Vehicule")
         self.capaciteVehicule_label.grid(row=1, column=0)
 
-        # Champ pour la date et Heure
+        # Champ pour la Capacite du Vehicule
         self.capaciteVehicule_entry = tk.Entry(self)
         self.capaciteVehicule_entry.grid(row=1, column=1)
 
-        # Label pour le capacitePersonne de Depart
-        self.capacitePersonneDepart_label = tk.Label(self, text="capacite en Personne ")
+        # Label pour la Capacite en Personne de Depart
+        self.capacitePersonneDepart_label = tk.Label(self, text="Capacite en Personne ")
         self.capacitePersonneDepart_label.grid(row=2, column=0)
 
-        # Champ pour le capacitePersonne de Depart
+        # Champ pour la Capacite en Personne de Depart
         self.capacitePersonneDepart_entry = tk.Entry(self)
         self.capacitePersonneDepart_entry.grid(row=2, column=1)
 
-        # Label pour l'employe Inscription
-        self.anneeFabrication_label = tk.Label(self, text="annee Fabrication")
+        # Label pour l'Annee De Fabrication
+        self.anneeFabrication_label = tk.Label(self, text="Annee De Fabrication")
         self.anneeFabrication_label.grid(row=3, column=0)
 
-        # Champ pour l'annee de Fabrication
+        # Champ pour l'Annee De Fabrication
         self.anneeFabrication_entry = tk.Entry(self)
         self.anneeFabrication_entry.grid(row=3, column=1)
 
-         # Label pour l'employe Inscription
-        self.dateMiseService_label = tk.Label(self, text="date Mise Service")
+         # Label pour la Date De Mise en Service
+        self.dateMiseService_label = tk.Label(self, text="Date De Mise en Service")
         self.dateMiseService_label.grid(row=3, column=0)
 
-        # Champ pour l'employe Inscription
+        # Champ pour la Date De Mise en Service
         self.dateMiseService_entry = tk.Entry(self)
         self.dateMiseService_entry.grid(row=3, column=1)
 
@@ -130,22 +145,20 @@ class Traversier(tk.Frame):
         # grid
         label.grid(row=0, column=4, padx=10, pady=10)
 
-
+        #Bouton Pour revenir a la page StartPage
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
         
-
+#Page Traverse
 class Traverse(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-		# label of frame Layout 2
+		# Label pour le titre de la page
         label = ttk.Label(self, text="Ajout d'une Traverse", font=LARGEFONT)
-        # Label pour le nom du type
-        self.nom_label = ttk.Label(self, text="Nom:")
-        self.nom_label.grid(row=0, column=0)
 
+       
 		# Label pour le no Traverse
         self.noTraverse_label = tk.Label(self, text="Numéro d'identification")
         self.noTraverse_label.grid(row=0, column=0)
@@ -180,17 +193,17 @@ class Traverse(tk.Frame):
 
         label.grid(row=0, column=4, padx=10, pady=10)
 
-
+        #Bouton pour revenir a la page StartPage
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
         
-
+# page Employe
 class Employe(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-		# label of frame Layout 2
+		# label Pour le titre
         label = ttk.Label(self, text="Ajout d'un Employe", font=LARGEFONT)
 
         # Label pour le nom
@@ -253,20 +266,22 @@ class Employe(tk.Frame):
         # grid
         label.grid(row=0, column=4, padx=10, pady=10)
 
-
+        #Bouton pour revenir a la page StartPage
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
 
+        #Bouton pour aller a la page Client
         button3 = ttk.Button(self, text="Client",
                              command=lambda: controller.show_frame(Client))
         button3.grid(row=3, column=6, padx=10, pady=10)
 
+#Page Client
 class Client(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-		# label of frame Layout 2
+		# label Pour le titre de la page
         label = ttk.Label(self, text="Ajout d'un Client", font=LARGEFONT)
 
         # Label pour le nom
@@ -329,28 +344,29 @@ class Client(tk.Frame):
         # grid
         label.grid(row=0, column=4, padx=10, pady=10)
 
-
+        #Bouton pour revenir a la page StartPage
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
 
+         #Bouton pour Aller a la page Employee
         button4 = ttk.Button(self, text="Employe",
                              command=lambda: controller.show_frame(Employe))
         button4.grid(row=3, column=6, padx=10, pady=10)
         
-
+ #Page Type Traversier
 class TypeTraverse(tk.Frame):
     
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-		# label of frame Layout 2
+		# label pour le titre Type Traversier
         label = ttk.Label(self, text="Ajout d'un type de traverse", font=LARGEFONT)
         # Label pour le nom du type
         self.nom_label = ttk.Label(self, text="Nom:")
         self.nom_label.grid(row=0, column=0)
         
-		 # Champ pour le no Traverse
+		# Champ pour le no Traverse
         self.nom_entry = tk.Entry(self)
         self.nom_entry.grid(row=0, column=1)
 		# Label pour le no Traverse
@@ -371,33 +387,39 @@ class TypeTraverse(tk.Frame):
         
         label.grid(row=0, column=4, padx=10, pady=10)
 
-
+         #Bouton pour revenir a la page StartPage
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
 
-
+#Page Vehicule
 class Vehicule(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-		# label of frame Layout 2
+		# label pour le titre de la page
         label = ttk.Label(self, text="Ajout d'un Vehicule", font=LARGEFONT)
+
         # Label pour le nom du type
         self.nom_label = ttk.Label(self, text="Nom:")
         self.nom_label.grid(row=0, column=0)
+
         # Champ pour le nom du type
         self.nom_entry = tk.Entry(self)
         self.nom_entry.grid(row=0, column=1)
+
         # Label pour le nombre Roue
         self.nombreRoue_label = tk.Label(self, text="le nombre de Roue:")
         self.nombreRoue_label.grid(row=1, column=0)
+
         # Champ pour le nombre Roue
         self.nombreRoue_entry = tk.Entry(self)
         self.nombreRoue_entry.grid(row=1, column=1)
+
         # Label pour le prix de Traverse
         self.prixTraverse_label = tk.Label(self, text="le prix de Traverse:")
         self.prixTraverse_label.grid(row=2, column=0)
+
         # Champ pour le prix de Traverse
         self.prixTraverse_entry = tk.Entry(self)
         self.prixTraverse_entry.grid(row=2, column=1)
@@ -406,7 +428,7 @@ class Vehicule(tk.Frame):
         # grid
         label.grid(row=0, column=4, padx=10, pady=10)
         
-		
+		 #Bouton pour revenir a la page StartPage
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
