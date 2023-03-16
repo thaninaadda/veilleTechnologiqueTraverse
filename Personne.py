@@ -1,4 +1,9 @@
-
+#
+# Nom du Fichier : Personne.py
+# Auteur: Thanina Adda
+# But: contient la classe Personne
+#
+#
 import tkinter as tk
 class Personne:
     def __init__(self, nom, addresse, ville, province, postal_code, telephone, email):

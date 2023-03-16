@@ -15,7 +15,6 @@ class tkinterApp(tk.Tk):
 	
 	# __init__ function for class tkinterApp
 	def __init__(self, *args, **kwargs):
-		
 		# __init__ function for class Tk
 		tk.Tk.__init__(self, *args, **kwargs)
 		
@@ -55,8 +54,10 @@ class tkinterApp(tk.Tk):
 
 class StartPage(tk.Frame):
     def __init__(self, parent, controller):
+       
         tk.Frame.__init__(self, parent)
-
+	
+    
 		# Titre du Projet.
         label = ttk.Label(self, text="projet Traverse", font=LARGEFONT)
         label.grid(row=0, column=4, padx=10, pady=10)
@@ -149,6 +150,8 @@ class Traversier(tk.Frame):
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
+
+        
         
 #Page Traverse
 class Traverse(tk.Frame):
@@ -197,6 +200,9 @@ class Traverse(tk.Frame):
         button2 = ttk.Button(self, text="Retour",
                              command=lambda: controller.show_frame(StartPage))
         button2.grid(row=2, column=6, padx=10, pady=10)
+
+
+        
         
 # page Employe
 class Employe(tk.Frame):
