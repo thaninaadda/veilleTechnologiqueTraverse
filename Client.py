@@ -9,27 +9,24 @@ class Client(Personne):
         self.dateDeNaissance = dateDeNaissance
 
 
-    
+    def GetHashCode(self):
+        return hash(self.codePostal + self.telephone)
 
 
-        # def GetHashCode(self):
-        # return hash(self.codePostal + self.telephone)
+    def Equals(self, obj):
+        if isinstance(obj, Client):
+            return (self.nom == obj.nom and self.adresse == obj.adresse and self.ville == obj.ville
+                    and self.province == obj.province and self.codePostal == obj.codePostal
+                    and self.telephone == obj.telephone and self.courriel == obj.courriel)
+        else:
+            return False
 
 
-        # def Equals(self, obj):
-        # if isinstance(obj, Client):
-        #     return (self.nom == obj.nom and self.adresse == obj.adresse and self.ville == obj.ville
-        #             and self.province == obj.province and self.codePostal == obj.codePostal
-        #             and self.telephone == obj.telephone and self.courriel == obj.courriel)
-        # else:
-        #     return False
-
-
-        # def ToString(self):
-        # return f"Nom: {self.nom}, 
-        #         Adresse: {self.adresse}, 
-        #         Ville: {self.ville}, 
-        #         Province: {self.province}, 
-        #         Code Postal: {self.codePostal}, 
-        #         Telephone: {self.telephone}, 
-        #         Courriel: {self.courriel}"
+    # def ToString(self):
+    #     return f"Nom: {self.nom}, 
+    #             Adresse: {self.adresse}, 
+    #             Ville: {self.ville}, 
+    #             Province: {self.province}, 
+    #             Code Postal: {self.codePostal}, 
+    #             Telephone: {self.telephone}, 
+    #             Courriel: {self.courriel}"
