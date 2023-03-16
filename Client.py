@@ -1,4 +1,10 @@
 
+#
+# Nom du Fichier : Personne.py
+# Auteur: Thanina Adda
+# But: contient la classe Personne
+#
+#
 import tkinter as tk;
 import Personne;
 class Client(Personne):

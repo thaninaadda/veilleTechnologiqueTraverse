@@ -1,3 +1,11 @@
+#
+# Nom du Fichier : Type.py
+# Auteur: Thanina Adda
+# But: contient la classe Type
+#
+#
+
+
 import tkinter as tk
 
 class Type:

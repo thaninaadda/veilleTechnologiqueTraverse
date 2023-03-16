@@ -1,3 +1,11 @@
+
+#
+# Nom du Fichier : Traversier.py
+# Auteur: Thanina Adda
+# But: contient la classe Traversier
+#
+
+
 import tkinter as tk
 
 class Traversier:

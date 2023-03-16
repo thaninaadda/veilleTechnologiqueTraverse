@@ -1,6 +1,6 @@
 #
 # Nom du Fichier : tkinterApp.py
-# Auteur: hanina Adda
+# Auteur: Thanina Adda
 # But: contient toutes les interfaces.
 #
 #
