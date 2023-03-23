@@ -7,6 +7,7 @@
 import tkinter as tk
 from tkinter import ttk
 from Vehicule import Vehicule 
+from Traverse import Traverse 
 # represente la police choisit pour le projet .
 LARGEFONT =("Verdana", 20)
 
@@ -152,57 +153,6 @@ class Traversier(tk.Frame):
         button2.grid(row=6, column=0, pady=10)
 
         
-#Page Traverse
-class Traverse(tk.Frame):
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-
-        # Label pour le titre de la page
-        label = ttk.Label(self, text="Ajout d'une Traverse", font=LARGEFONT)
-        label.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
-
-        # Label pour le no Traverse
-        self.noTraverse_label = tk.Label(self, text="Numéro d'identification")
-        self.noTraverse_label.grid(row=1, column=0)
-
-        # Champ pour le no Traverse
-        self.noTraverse_entry = tk.Entry(self)
-        self.noTraverse_entry.grid(row=1, column=1)
-
-        # Label pour la date et Heure
-        self.dateHeure_label = tk.Label(self, text="date et heure")
-        self.dateHeure_label.grid(row=2, column=0)
-
-        # Champ pour la date et Heure
-        self.dateHeure_entry = tk.Entry(self)
-        self.dateHeure_entry.grid(row=2, column=1)
-
-        # Label pour le ville de Depart
-        self.villeDepart_label = tk.Label(self, text="ville de Depart")
-        self.villeDepart_label.grid(row=3, column=0)
-
-        # Champ pour le ville de Depart
-        self.villeDepart_entry = tk.Entry(self)
-        self.villeDepart_entry.grid(row=3, column=1)
-
-        # Label pour l'employe Inscription
-        self.employeInscription_label = tk.Label(self, text="employe Inscription")
-        self.employeInscription_label.grid(row=4, column=0)
-
-        # Champ pour l'employe Inscription
-        self.employeInscription_entry = tk.Entry(self)
-        self.employeInscription_entry.grid(row=4, column=1)
-
-        # Bouton pour revenir a la page StartPage
-        button2 = ttk.Button(self, text="Retour",
-                             command=lambda: controller.show_frame(StartPage))
-        button2.grid(row=5, column=0, padx=10, pady=10)
-
-        # Bouton pour aller a la page Client
-        button3 = ttk.Button(self, text="Client",
-                             command=lambda: controller.show_frame(Client))
-        button3.grid(row=5, column=1, padx=10, pady=10)
-
 
         
         
@@ -398,59 +348,6 @@ class TypeTraverse(tk.Frame):
         button2.grid(row=4, column=0, columnspan=2, pady=10)
 
 
-# #Page Vehicule
-# class Vehicule(tk.Frame):
-#     def __init__(self, parent, controller):
-#         tk.Frame.__init__(self, parent)
-
-#         # label pour le titre Type Traversier
-#         label = ttk.Label(self, text="Ajout d'un vehciule", font=LARGEFONT)
-#         label.grid(row=0, column=0, columnspan=2, pady=10) # correction de la ligne du label
-
-#         # Label pour le nom du type
-#         self.noIdentification_label = ttk.Label(self, text="no Identification:")
-#         self.noIdentification_label.grid(row=1, column=0)
-        
-#         # Champ pour le noIdentification
-#         self.noIdentification_entry = tk.Entry(self)
-#         self.noIdentification_entry.grid(row=1, column=1)
-
-#         # Label pour la marque
-#         self.marque_label = tk.Label(self, text="Marque:")
-#         self.marque_label.grid(row=2, column=0)
-
-#         # Champ pour la couleur
-#         self.marque_entry = tk.Entry(self)
-#         self.marque_entry.grid(row=2, column=1)
-
-#         # Label pour la date et Heure
-#         self.couleur_label = tk.Label(self, text="couleur:")
-#         self.couleur_label.grid(row=3, column=0)
-
-#         # Champ pour lcouleur
-#         self.couleur_entry = tk.Entry(self)
-#         self.couleur_entry.grid(row=3, column=1)
-
-#         # Label pour annee
-#         self.annee_label = tk.Label(self, text="Annee:")
-#         self.annee_label.grid(row=4, column=0)
-
-#         # Champ pour annee
-#         self.annee_entry = tk.Entry(self)
-#         self.annee_entry.grid(row=4, column=1)
-
-#         # Label pour la date et Heure
-#         self.immatriculation_label = tk.Label(self, text="Immatriculation:")
-#         self.immatriculation_label.grid(row=5, column=0)
-
-#         # Champ pour lcouleur
-#         self.immatriculation_entry = tk.Entry(self)
-#         self.immatriculation_entry.grid(row=5, column=1)
-        
-#         # Bouton pour revenir a la page StartPage
-#         button2 = ttk.Button(self, text="Retour",
-#                              command=lambda: controller.show_frame(StartPage))
-#         button2.grid(row=6, column=0, columnspan=2, pady=10)
 
 # Driver Code
 app = tkinterApp()
