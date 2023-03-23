@@ -6,50 +6,53 @@
 #
 import tkinter as tk
 from tkinter import ttk
-
+from Vehicule import Vehicule 
 # represente la police choisit pour le projet .
 LARGEFONT =("Verdana", 20)
 
-#Classe tkinterApp, cette classe appel la page Principale au debut du programme.
+# Classe tkinterApp, cette classe appel la page Principale au debut du programme.
 class tkinterApp(tk.Tk):
-	
-	# __init__ function for class tkinterApp
-	def __init__(self, *args, **kwargs):
-		# __init__ function for class Tk
-		tk.Tk.__init__(self, *args, **kwargs)
-		
-		# creating a container
-		container = tk.Frame(self)
-		container.pack(side = "top", fill = "both", expand = True)
+    
+    # __init__ function for class tkinterApp
+    def __init__(self, *args, **kwargs):
+        # __init__ function for class Tk
+        tk.Tk.__init__(self, *args, **kwargs)
+        
+        # creating a container
+        container = tk.Frame(self)
+        container.pack(side = "top", fill = "both", expand = True)
 
-		container.grid_rowconfigure(0, weight = 1)
-		container.grid_columnconfigure(0, weight = 1)
+        container.grid_rowconfigure(0, weight = 1)
+        container.grid_columnconfigure(0, weight = 1)
 
-		# initializing frames to an empty array
-		self.frames = {}
+        # initializing frames to an empty array
+        self.frames = {}
 
-		# iterating through a tuple consisting
-		# of the different page layouts
-		for F in (StartPage,Traverse,Traversier,TypeTraverse, Client, Employe,Vehicule):
+        # iterating through a tuple consisting
+        # of the different page layouts
+        for F in (StartPage, Traverse, Traversier, TypeTraverse, Client, Employe, Vehicule):
 
-			frame = F(container, self)
+            frame = F(container, self)
 
-			# initializing frame of that object from
-			# startpage, page1, page2 respectively with
-			# for loop
-			self.frames[F] = frame
-			
+            # initializing frame of that object from
+            # startpage, page1, page2 respectively with
+            # for loop
+            self.frames[F] = frame
+            frame.grid(row = 0, column = 0, sticky ="nsew")
 
-			frame.grid(row = 0, column = 0, sticky ="nsew")
-        #demarrage de la page StartPage
-		self.show_frame(StartPage)
+        # démarrage de la page StartPage
+        self.pageDemarrage()
 
-	# to display the current frame passed as
-	# parameter
-	def show_frame(self, cont):
-		frame = self.frames[cont]
-		frame.tkraise()
+    def pageDemarrage(self):
+        self.show_frame(StartPage)
 
+    # to display the current frame passed as
+    # parameter
+    def show_frame(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
+
+                
 # Page StartPage
 
 class StartPage(tk.Frame):
@@ -395,59 +398,59 @@ class TypeTraverse(tk.Frame):
         button2.grid(row=4, column=0, columnspan=2, pady=10)
 
 
-#Page Vehicule
-class Vehicule(tk.Frame):
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+# #Page Vehicule
+# class Vehicule(tk.Frame):
+#     def __init__(self, parent, controller):
+#         tk.Frame.__init__(self, parent)
 
-        # label pour le titre Type Traversier
-        label = ttk.Label(self, text="Ajout d'un vehciule", font=LARGEFONT)
-        label.grid(row=0, column=0, columnspan=2, pady=10) # correction de la ligne du label
+#         # label pour le titre Type Traversier
+#         label = ttk.Label(self, text="Ajout d'un vehciule", font=LARGEFONT)
+#         label.grid(row=0, column=0, columnspan=2, pady=10) # correction de la ligne du label
 
-        # Label pour le nom du type
-        self.noIdentification_label = ttk.Label(self, text="no Identification:")
-        self.noIdentification_label.grid(row=1, column=0)
+#         # Label pour le nom du type
+#         self.noIdentification_label = ttk.Label(self, text="no Identification:")
+#         self.noIdentification_label.grid(row=1, column=0)
         
-        # Champ pour le noIdentification
-        self.noIdentification_entry = tk.Entry(self)
-        self.noIdentification_entry.grid(row=1, column=1)
+#         # Champ pour le noIdentification
+#         self.noIdentification_entry = tk.Entry(self)
+#         self.noIdentification_entry.grid(row=1, column=1)
 
-        # Label pour la marque
-        self.marque_label = tk.Label(self, text="Marque:")
-        self.marque_label.grid(row=2, column=0)
+#         # Label pour la marque
+#         self.marque_label = tk.Label(self, text="Marque:")
+#         self.marque_label.grid(row=2, column=0)
 
-        # Champ pour la couleur
-        self.marque_entry = tk.Entry(self)
-        self.marque_entry.grid(row=2, column=1)
+#         # Champ pour la couleur
+#         self.marque_entry = tk.Entry(self)
+#         self.marque_entry.grid(row=2, column=1)
 
-        # Label pour la date et Heure
-        self.couleur_label = tk.Label(self, text="couleur:")
-        self.couleur_label.grid(row=3, column=0)
+#         # Label pour la date et Heure
+#         self.couleur_label = tk.Label(self, text="couleur:")
+#         self.couleur_label.grid(row=3, column=0)
 
-        # Champ pour lcouleur
-        self.couleur_entry = tk.Entry(self)
-        self.couleur_entry.grid(row=3, column=1)
+#         # Champ pour lcouleur
+#         self.couleur_entry = tk.Entry(self)
+#         self.couleur_entry.grid(row=3, column=1)
 
-        # Label pour annee
-        self.annee_label = tk.Label(self, text="Annee:")
-        self.annee_label.grid(row=4, column=0)
+#         # Label pour annee
+#         self.annee_label = tk.Label(self, text="Annee:")
+#         self.annee_label.grid(row=4, column=0)
 
-        # Champ pour annee
-        self.annee_entry = tk.Entry(self)
-        self.annee_entry.grid(row=4, column=1)
+#         # Champ pour annee
+#         self.annee_entry = tk.Entry(self)
+#         self.annee_entry.grid(row=4, column=1)
 
-        # Label pour la date et Heure
-        self.immatriculation_label = tk.Label(self, text="Immatriculation:")
-        self.immatriculation_label.grid(row=5, column=0)
+#         # Label pour la date et Heure
+#         self.immatriculation_label = tk.Label(self, text="Immatriculation:")
+#         self.immatriculation_label.grid(row=5, column=0)
 
-        # Champ pour lcouleur
-        self.immatriculation_entry = tk.Entry(self)
-        self.immatriculation_entry.grid(row=5, column=1)
+#         # Champ pour lcouleur
+#         self.immatriculation_entry = tk.Entry(self)
+#         self.immatriculation_entry.grid(row=5, column=1)
         
-        # Bouton pour revenir a la page StartPage
-        button2 = ttk.Button(self, text="Retour",
-                             command=lambda: controller.show_frame(StartPage))
-        button2.grid(row=6, column=0, columnspan=2, pady=10)
+#         # Bouton pour revenir a la page StartPage
+#         button2 = ttk.Button(self, text="Retour",
+#                              command=lambda: controller.show_frame(StartPage))
+#         button2.grid(row=6, column=0, columnspan=2, pady=10)
 
 # Driver Code
 app = tkinterApp()

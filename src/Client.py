@@ -1,12 +1,12 @@
 
 #
-# Nom du Fichier : Personne.py
+# Nom du Fichier : Client.py
 # Auteur: Thanina Adda
 # But: contient la classe Personne
 #
 #
 import tkinter as tk;
-import Personne;
+import src.Personne as Personne;
 class Client(Personne):
     def __init__(self, nom, adresse, ville, province, codePostal, telephone, courriel, numeroIdentification, sexe,dateDeNaissance):
         super().__init__(nom, adresse, ville, province, codePostal, telephone, courriel)
@@ -28,11 +28,4 @@ class Client(Personne):
             return False
 
 
-    # def ToString(self):
-    #     return f"Nom: {self.nom}, 
-    #             Adresse: {self.adresse}, 
-    #             Ville: {self.ville}, 
-    #             Province: {self.province}, 
-    #             Code Postal: {self.codePostal}, 
-    #             Telephone: {self.telephone}, 
-    #             Courriel: {self.courriel}"
+ 

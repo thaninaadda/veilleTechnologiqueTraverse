@@ -5,7 +5,7 @@
 #
 #
 import tkinter as tk;
-import Personne;
+import src.Personne as Personne;
 class Employe(Personne):
     def __init__(self, nom, adresse, ville, province, codePostal, telephone, courriel, noEmploye, nAS,dateArret):
         super().__init__(nom, adresse, ville, province, codePostal, telephone, courriel)
