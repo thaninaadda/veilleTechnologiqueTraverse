@@ -2,17 +2,19 @@
 #
 # Nom du Fichier : Client.py
 # Auteur: Thanina Adda
-# But: contient la classe Personne
+# But: contient la classe Client
 #
 #
 import xml.etree.ElementTree as ET
 
-# Load the XML file
+# charge du fichier xml
 tree = ET.parse('donnees.xml')
 root = tree.getroot()
 import tkinter as tk
 from tkinter import ttk
 LARGEFONT =("Verdana", 20)
+
+#classe Client
 class Client(tk.Frame):
     def __init__(self, parent, controleur, nom="", adresse="", ville="", province="", codePostal="", telephone="", courriel="", numeroIdentification="", sexe="",dateDeNaissance=""):
         
@@ -29,7 +31,7 @@ class Client(tk.Frame):
 
         self.listeClient = []
         super().__init__(parent)
-    # label Pour le titre
+        # label Pour le titre
         label = ttk.Label(self, text="Ajout d'un Client", font=LARGEFONT)
         label.grid(row=0, column=0, columnspan=2, pady=10)
 
@@ -117,25 +119,24 @@ class Client(tk.Frame):
         self.listbox = tk.Listbox(self, width=50, height=10)
         self.listbox.grid(row=11, column=0, columnspan=2, pady=10)
 
-
+        #Fonction qui permet de lire les données du fichier xml
         self.fonctionLireDonneesClientXml()
-        # Bouton pour ajouter un client
+
+        # Bouton pour ajouter un client, et écrit dans le fichier xml
         button1 = ttk.Button(self, text="Ajouter", command=self.fonctionEcrireDonneesClientXml)
         button1.grid(row=12, column=0, columnspan=2, pady=10)
 
         
-
-
         # Bouton pour revenir a la page StartPage
         button2 = ttk.Button(self, text="Retour",
                         command=lambda: controleur.pageDemarrage())
         button2.grid(row=12, column=1, columnspan=2, pady=10)
 
-
+    #Fonction GetHashCode
     def GetHashCode(self):
         return hash(self.codePostal + self.telephone)
 
-
+    #Fontion Equals
     def Equals(self, obj):
         if isinstance(obj, Client):
             return (self.nom == obj.nom and self.adresse == obj.adresse and self.ville == obj.ville
@@ -145,6 +146,12 @@ class Client(tk.Frame):
             return False
 
 
+
+    # Fonction toString pour la classe Client
+    def toString(self):
+        return f"Nom: {self.nom}\nAdresse: {self.adresse}\nVille: {self.ville}\nProvince: {self.province}\nCode Postal: {self.codePostal}\nTéléphone: {self.telephone}\nCourriel: {self.courriel}"
+
+    #Foncton qui permet de lire les informations du fichier xml 
     def fonctionLireDonneesClientXml(self):
         for client in root.findall('client'):
             nom = client.find('nom').text
@@ -162,6 +169,7 @@ class Client(tk.Frame):
             
         print(self.listeClient)
 
+    #Foncton qui permet d'ajouter les informations d'un client dans le fichier xml 
     def fonctionEcrireDonneesClientXml(self):
         client = ET.SubElement(root, 'client')
         nom = ET.SubElement(client, 'nom')

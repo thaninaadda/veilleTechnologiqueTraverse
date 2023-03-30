@@ -6,13 +6,14 @@
 #
 import xml.etree.ElementTree as ET
 
-# Load the XML file
+# charge du fichier xml
 tree = ET.parse('donnees.xml')
 root = tree.getroot()
 import tkinter as tk;
 
 from tkinter import ttk
 LARGEFONT =("Verdana", 20)
+#classe Employé
 class Employe(tk.Frame):
     def __init__(self, parent, controleur, nom="", adresse="", ville="", province="", codePostal="",
                   telephone="", courriel="", noEmploye="",dateArret=""):
@@ -25,7 +26,6 @@ class Employe(tk.Frame):
         self.telephone = telephone
         self.courriel = courriel
         self.noEmploye = noEmploye
-        # self.nas = nas
         self.dateArret = dateArret
         self.listeEmploye = []
         super().__init__(parent)
@@ -105,14 +105,6 @@ class Employe(tk.Frame):
         self.id_entry = tk.Entry(self)
         self.id_entry.grid(row=8, column=1)
 
-        # Label pour le sexe
-        # self.nas_label = tk.Label(self, text="nas")
-        # self.nas_label.grid(row=9, column=0)
-
-        # # Champ pour le sexe
-        # self.nas_entry = tk.Entry(self)
-        # self.nas_entry.grid(row=9, column=1)
-
         # Label pour la date de naissance
         self.dateArret_label = tk.Label(self, text="date Arret")
         self.dateArret_label.grid(row=10, column=0)
@@ -121,12 +113,12 @@ class Employe(tk.Frame):
         self.dateArret_entry = tk.Entry(self)
         self.dateArret_entry.grid(row=10, column=1)
 
-        # listbox des clients
+        # listbox des Employés
         self.listbox = tk.Listbox(self, width=50, height=10)
         self.listbox.grid(row=11, column=0, columnspan=2, pady=10)
 
         self.fonctionLireDonneesEmployesXml()
-        # Bouton pour ajouter un client
+        # Bouton pour ajouter un Employé
         button1 = ttk.Button(self, text="Ajouter", command=self.fonctionEcrireDonneesEmployesXml)
         button1.grid(row=12, column=0, columnspan=2, pady=10)
 
@@ -135,11 +127,11 @@ class Employe(tk.Frame):
                         command=lambda: controleur.pageDemarrage())
         button2.grid(row=12, column=1, columnspan=2, pady=10)
 
-
+    #Fonction GetHashCode pour la classe Employé
     def GetHashCode(self):
         return hash(self.codePostal + self.telephone)
 
-
+    #Fonction Equals pour la classe Employé
     def Equals(self, obj):
         if isinstance(obj, Employe):
             return (self.nom == obj.nom and self.adresse == obj.adresse and self.ville == obj.ville
@@ -149,6 +141,11 @@ class Employe(tk.Frame):
             return False
 
 
+    # Fonction toString pour la classe Employé
+    def toString(self):
+        return f"Nom: {self.nom}\nAdresse: {self.adresse}\nVille: {self.ville}\nProvince: {self.province}\nCode Postal: {self.codePostal}\nTéléphone: {self.telephone}\nCourriel: {self.courriel}"
+
+    #Foncton qui permet de lire les informations du fichier xml
     def fonctionLireDonneesEmployesXml(self):
         for employe in root.findall('employe'):
             nom = employe.find('nom').text
@@ -159,13 +156,13 @@ class Employe(tk.Frame):
             telephone = employe.find('telephone').text
             courriel = employe.find('courriel').text
             noEmploye = employe.find('noEmploye').text
-            # nas = employe.find('nas').text
             dateArret = employe.find('dateArret').text
             self.listeEmploye.append(employe)
             self.listbox.insert(tk.END, nom)
 
         print(self.listeEmploye)
 
+    #Foncton qui permet d'ajouter les informations d'un client dans le fichier xml 
     def fonctionEcrireDonneesEmployesXml(self):
         employe = ET.SubElement(root, 'employe')
         nom = ET.SubElement(employe, 'nom')
@@ -184,8 +181,6 @@ class Employe(tk.Frame):
         courriel.text = self.email_entry.get()
         noEmploye = ET.SubElement(employe, 'noEmploye')
         noEmploye.text = self.id_entry.get()
-        # nas = ET.SubElement(nas, 'nas')
-        # nas.text = self.nas_entry.get()
         dateArret = ET.SubElement(employe, 'dateArret')
         dateArret.text = self.dateArret_entry.get()
         
