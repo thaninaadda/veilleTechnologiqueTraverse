@@ -1,7 +1,7 @@
 #
-# Nom du Fichier : Vehicule.py
+# Nom du Fichier : Véhicule.py
 # Auteur: Thanina Adda
-# But: contient la classe Vehicule
+# But: contient la classe Véhicule
 #
 #
 import xml.etree.ElementTree as ET
@@ -12,9 +12,11 @@ root = tree.getroot()
 import tkinter as tk
 from tkinter import ttk
 LARGEFONT =("Verdana", 20)
+
+#Classe Véhicule
 class Vehicule(tk.Frame):
     def __init__(self, parent, controleur, noIdentification = 0, marque ="", modele="", couleur="", annee=2000, immatriculation=""):
-        #self.fonctionLireDonneesXml()
+
         self.noIdentification = noIdentification
         self.marque = marque
         self.modele = modele
@@ -26,11 +28,11 @@ class Vehicule(tk.Frame):
 
         self.listeVehicule = []
     
-        # label pour le titre Type Traversier
+        # label pour le titre du Véhicule
         label = ttk.Label(self, text="Ajout d'un vehciule", font=LARGEFONT)
         label.grid(row=0, column=0, columnspan=2, pady=10) # correction de la ligne du label
 
-        # Label pour le nom du type
+        # Label pour le no d'identification
         self.noIdentification_label = ttk.Label(self, text="no Identification:")
         self.noIdentification_label.grid(row=1, column=0)
         
@@ -42,7 +44,7 @@ class Vehicule(tk.Frame):
         self.marque_label = tk.Label(self, text="Marque:")
         self.marque_label.grid(row=2, column=0)
 
-        # Champ pour la couleur
+        # Champ pour la marque
         self.marque_entry = tk.Entry(self)
         self.marque_entry.grid(row=2, column=1)
 
@@ -58,33 +60,33 @@ class Vehicule(tk.Frame):
         self.couleur_label = tk.Label(self, text="couleur:")
         self.couleur_label.grid(row=4, column=0)
 
-        # Champ pour la couleur
+        # Champ pour la date et Heure
         self.couleur_entry = tk.Entry(self)
         self.couleur_entry.grid(row=4, column=1)
 
-        # Label pour annee
+        # Label pour année 
         self.annee_label = tk.Label(self, text="Annee:")
         self.annee_label.grid(row=5, column=0)
 
-        # Champ pour annee
+        # Champ pour année
         self.annee_entry = tk.Entry(self)
         self.annee_entry.grid(row=5, column=1)
 
-        # Label pour la date et Heure
+        # Label pour l'immatriculation
         self.immatriculation_label = tk.Label(self, text="Immatriculation:")
         self.immatriculation_label.grid(row=6, column=0)
 
-        # Champ pour lcouleur
+        # Champ pour l'immatriculation
         self.immatriculation_entry = tk.Entry(self)
         self.immatriculation_entry.grid(row=6, column=1)
 
-        # liste des vehicules
+        # liste des Véhiculea
         self.listeboxVehicule = tk.Listbox(self, height=5, width=50)
         self.listeboxVehicule.grid(row=7, column=0, columnspan=2, pady=10)
 
         self.fonctionLireDonneesVehiculeXml()
 
-        # Bouton pour ajouter un vehicule
+        # Bouton pour ajouter un Véhicule
         button1 = ttk.Button(self, text="Ajouter", command=self.fonctionEcrireDonneesVehiculeXml)
         button1.grid(row=8, column=0, pady=10)
 
@@ -93,6 +95,7 @@ class Vehicule(tk.Frame):
                         command=lambda: controleur.pageDemarrage())
         button2.grid(row=8, column=1, columnspan=2, pady=10)
 
+    #Foncton qui permet de lire les informations du fichier xml 
     def fonctionLireDonneesVehiculeXml(self):
         for vehicule in root.findall('vehicule'):
             noIdentification = vehicule.find('noIdentification').text
@@ -107,6 +110,7 @@ class Vehicule(tk.Frame):
 
         print(self.listeVehicule)
 
+    #Foncton qui permet d'ajouter les informations d'un Véhicule dans le fichier xml 
     def fonctionEcrireDonneesVehiculeXml(self):
         vehicule = ET.SubElement(root, 'vehicule')
         noIdentification = ET.SubElement(vehicule, 'noIdentification')
@@ -124,3 +128,20 @@ class Vehicule(tk.Frame):
         print("Ecriture Vehicule dans le fichier XML")
         tree.write('donnees.xml')
         self.fonctionLireDonneesVehiculeXml()
+
+
+     #Fonction GetHashCode pour la classe Véhicule
+    def GetHashCode(self):
+        return hash(self.marque + self.modele)
+
+    #Fontion Equals pour la classe Véhicule
+    def Equals(self, obj):
+        if isinstance(obj, Vehicule):
+            return (self.noIdentification == obj.noIdentification and self.marque == obj.marque and self.modele == obj.modele
+                    and self.couleur == obj.couleur and self.annee == obj.annee and self.immatriculation == obj.immatriculation)
+        else:
+            return False
+
+    # Fonction toString pour la classe Véhicule
+    def toString(self):
+        return f"noIdentification: {self.noIdentification}\nmarque: {self.marque}\nmodele: {self.modele}\ncouleur: {self.couleur}\nannee: {self.annee}\nimmatriculation: {self.immatriculation}"
