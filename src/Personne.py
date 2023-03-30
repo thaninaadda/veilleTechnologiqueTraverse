@@ -18,5 +18,21 @@ class Personne:
         self.email = email
 
 
+    #Fonction GetHashCode  pour la classe Personne
+    def GetHashCode(self):
+        return hash(self.codePostal + self.telephone)
 
-   
+    #Fontion Equals  pour la classe Personne
+    def Equals(self, obj):
+        if isinstance(obj, Personne):
+            return (self.nom == obj.nom and self.adresse == obj.adresse and self.ville == obj.ville
+                    and self.province == obj.province and self.codePostal == obj.codePostal
+                    and self.telephone == obj.telephone and self.courriel == obj.courriel)
+        else:
+            return False
+
+
+
+    # Fonction toString pour la classe Personne
+    def toString(self):
+        return f"Nom: {self.nom}\nAdresse: {self.adresse}\nVille: {self.ville}\nProvince: {self.province}\nCode Postal: {self.codePostal}\nTéléphone: {self.telephone}\nCourriel: {self.courriel}"
