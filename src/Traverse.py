@@ -43,19 +43,19 @@ class Traverse(tk.Frame):
         self.dateHeure_entry = tk.Entry(self)
         self.dateHeure_entry.grid(row=2, column=1)
 
-        # Label pour le ville de Depart
+        # Label pour le ville de Départ
         self.villeDepart_label = tk.Label(self, text="ville de Depart")
         self.villeDepart_label.grid(row=3, column=0)
 
-        # Champ pour le ville de Depart
+        # Champ pour le ville de Départ
         self.villeDepart_entry = tk.Entry(self)
         self.villeDepart_entry.grid(row=3, column=1)
 
-        # Label pour l'employe Inscription
+        # Label pour Inscription de l'employé
         self.employeInscription_label = tk.Label(self, text="employe Inscription")
         self.employeInscription_label.grid(row=4, column=0)
 
-        # Champ pour l'employe Inscription
+        # Champ pour Inscription de l'employé
         self.employeInscription_entry = tk.Entry(self)
         self.employeInscription_entry.grid(row=4, column=1)
 
@@ -63,3 +63,20 @@ class Traverse(tk.Frame):
         button2 = ttk.Button(self, text="Retour",
                         command=lambda: controleur.pageDemarrage())
         button2.grid(row=6, column=0, columnspan=2, pady=10)
+    
+
+    #Fonction GetHashCode pour la classe Traverse
+    def GetHashCode(self):
+        return hash(self.villeDepart + self.dateHeure)
+
+    #Fontion Equals pour la classe Traverse
+    def Equals(self, obj):
+        if isinstance(obj, Traverse):
+            return (self.noTraverse == obj.noTraverse and self.dateHeure == obj.dateHeure and self.villeDepart == obj.villeDepart
+                    and self.employeInscription == obj.employeInscription)
+        else:
+            return False
+
+    # Fonction toString pour la classe Traverse
+    def toString(self):
+        return f"no Traverse: {self.noTraverse}\ndateHeure: {self.dateHeure}\nvilleDepart: {self.villeDepart}\nemployeInscription: {self.employeInscription}"

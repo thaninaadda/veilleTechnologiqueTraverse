@@ -14,7 +14,7 @@ import tkinter as tk
 from tkinter import ttk
 LARGEFONT =("Verdana", 20)
 
-#classe Client
+#Classe Client
 class Client(tk.Frame):
     def __init__(self, parent, controleur, nom="", adresse="", ville="", province="", codePostal="", telephone="", courriel="", numeroIdentification="", sexe="",dateDeNaissance=""):
         
