@@ -1,8 +1,38 @@
 <projetTraverse>
-<vehicule><noIdentification>N1</noIdentification><marque>Nissan</marque><modele>Silvia</modele><couleur>bleu</couleur><annee>2000</annee><immatriculation>g5r4b4</immatriculation></vehicule>
-<vehicule><noIdentification>N2</noIdentification><marque>Nissan</marque><modele>Silvia</modele><couleur>rouge</couleur><annee>2005</annee><immatriculation>g5r4b4</immatriculation></vehicule>
-<vehicule><noIdentification>N3</noIdentification><marque>Nissan</marque><modele>Silvia</modele><couleur>grise</couleur><annee>2005</annee><immatriculation>g5r4b4</immatriculation></vehicule>
-<vehicule><noIdentification>N4</noIdentification><marque>Nissan</marque><modele>Silvia</modele><couleur>grise</couleur><annee>2005</annee><immatriculation>g5r4b4</immatriculation></vehicule>
+<vehicule>
+<noIdentification>N1</noIdentification>
+<marque>Nissan</marque>
+<modele>Silvia</modele>
+<couleur>bleu</couleur>
+<annee>2000</annee>
+<immatriculation>g5r4b4</immatriculation>
+</vehicule>
+<vehicule>
+<noIdentification>N2</noIdentification>
+<marque>Nissan</marque>
+<modele>Silvia</modele>
+<couleur>rouge</couleur>
+<annee>2005</annee>
+<immatriculation>g5r4b4</immatriculation>
+</vehicule>
+
+
+<vehicule>
+<noIdentification>N3</noIdentification>
+<marque>Nissan</marque>
+<modele>Silvia</modele>
+<couleur>grise</couleur>
+<annee>2005</annee>
+<immatriculation>g5r4b4</immatriculation>
+</vehicule>
+<vehicule>
+<noIdentification>N4</noIdentification>
+<marque>Nissan</marque>
+<modele>Silvia</modele>
+<couleur>grise</couleur>
+<annee>2005</annee>
+<immatriculation>g5r4b4</immatriculation>
+</vehicule>
 
 
 
@@ -50,6 +80,17 @@
 <telephone>000-000-0000</telephone>
 <courriel>client2@gmail.com</courriel>
 <numeroIdentification>02</numeroIdentification>
-<sexe>F</sexe><dateDeNaissance>2002-02-05</dateDeNaissance
-></client>
+<sexe>F</sexe><dateDeNaissance>2002-02-05</dateDeNaissance></client>
+<client>
+<nom>client3</nom>
+<adresse>rue des pommes</adresse>
+<ville>rdl</ville>
+<province>qc</province>
+<codePostal>g454b4</codePostal>
+<telephone>000-000-0000</telephone>
+<courriel>client3@gmail.com</courriel>
+<numeroIdentification>003</numeroIdentification>
+<sexe>M</sexe>
+<dateDeNaissance>2002-2-03</dateDeNaissance>
+</client>
 </projetTraverse>
