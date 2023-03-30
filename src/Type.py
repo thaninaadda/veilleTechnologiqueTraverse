@@ -9,6 +9,8 @@
 import tkinter as tk
 from tkinter import ttk
 LARGEFONT =("Verdana", 20)
+
+#Classe type Traverse
 class Type(tk.Frame):
     def __init__(self, parent, controleur, nom="", nombreRoue="", prixTraverse=""):
 
@@ -50,5 +52,24 @@ class Type(tk.Frame):
         button2 = ttk.Button(self, text="Retour",
                         command=lambda: controleur.pageDemarrage())
         button2.grid(row=6, column=0, columnspan=2, pady=10)
+
+
+    #Fonction GetHashCode pour la classe Type
+    def GetHashCode(self):
+        return hash(self.prixTraverse + self.nombreRoue)
+
+    #Fontion Equals pour la classe Type
+    def Equals(self, obj):
+        if isinstance(obj, Type):
+            return (self.nom == obj.nom and self.nombreRoue == obj.nombreRoue and self.prixTraverse == obj.prixTraverse)
+        else:
+            return False
+
+    # Fonction toString pour la classe Type
+    def toString(self):
+        return f"nom : {self.nom}\nnombre de Roue: {self.nombreRoue}\nprixTraverse: {self.prixTraverse}"
+
+
+        
 
 

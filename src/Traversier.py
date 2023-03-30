@@ -35,27 +35,27 @@ class Traversier(tk.Frame):
         self.nom_entry = tk.Entry(self)
         self.nom_entry.grid(row=1, column=1)
 
-        # Label pour la Capacite du Vehicule
+        # Label pour la Capacité du Véhicule
         self.capaciteVehicule_label = tk.Label(self, text="Capacite du vehicule")
         self.capaciteVehicule_label.grid(row=2, column=0)
 
-        # Champ pour la Capacite du Vehicule
+        # Champ pour la Capacité du Véhicule
         self.capaciteVehicule_entry = tk.Entry(self)
         self.capaciteVehicule_entry.grid(row=2, column=1)
 
-        # Label pour la Capacite en Personne de Depart
+        # Label pour la Capacité de Personne  au Départ
         self.capacitePersonneDepart_label = tk.Label(self, text="Capacite en personne")
         self.capacitePersonneDepart_label.grid(row=3, column=0)
 
-        # Champ pour la Capacite en Personne de Depart
+        # Champ pour la Capacité de Personne  au Départ
         self.capacitePersonneDepart_entry = tk.Entry(self)
         self.capacitePersonneDepart_entry.grid(row=3, column=1)
 
-        # Label pour l'Annee De Fabrication
+        # Label pour l'Année De Fabrication
         self.anneeFabrication_label = tk.Label(self, text="Annee de fabrication")
         self.anneeFabrication_label.grid(row=4, column=0)
 
-        # Champ pour l'Annee De Fabrication
+        # Champ pour l'Année De Fabrication
         self.anneeFabrication_entry = tk.Entry(self)
         self.anneeFabrication_entry.grid(row=4, column=1)
 
@@ -71,6 +71,24 @@ class Traversier(tk.Frame):
         button2 = ttk.Button(self, text="Retour",
                         command=lambda: controleur.pageDemarrage())
         button2.grid(row=6, column=0, columnspan=2, pady=10)
+
+
+    #Fonction GetHashCode pour la classe Traversier
+    def GetHashCode(self):
+        return hash(self.capacitePersonne + self.dateMiseService)
+
+    #Fontion Equals pour la classe Traversier
+    def Equals(self, obj):
+        if isinstance(obj, Traversier):
+            return (self.nom == obj.nom and self.capacitePersonne == obj.capacitePersonne and self.anneeFabrication == obj.anneeFabrication
+                    and self.dateMiseService == obj.dateMiseService)
+        else:
+            return False
+
+    # Fonction toString pour la classe Traversier
+    def toString(self):
+        return f"nom : {self.nom}\ncapacite Personne: {self.capacitePersonne}\nannee Fabrication: {self.anneeFabrication}\ndate Mise en Service: {self.dateMiseService}"
+
 
         
         

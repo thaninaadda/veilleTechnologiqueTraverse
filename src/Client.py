@@ -145,8 +145,6 @@ class Client(tk.Frame):
         else:
             return False
 
-
-
     # Fonction toString pour la classe Client
     def toString(self):
         return f"Nom: {self.nom}\nAdresse: {self.adresse}\nVille: {self.ville}\nProvince: {self.province}\nCode Postal: {self.codePostal}\nTéléphone: {self.telephone}\nCourriel: {self.courriel}"
