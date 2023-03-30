@@ -48,10 +48,18 @@ class Type(tk.Frame):
         # Champ pour le no Traverse
         self.prixTraverse_entry = tk.Entry(self)
         self.prixTraverse_entry.grid(row=3, column=1)
+
+        # listbox des types de traverse
+        self.listbox = tk.Listbox(self, width=50, height=10)
+        self.listbox.grid(row=13, column=0, columnspan=2, pady=10)
+
+        # Bouton pour ajouter un client, et écrit dans le fichier xml
+        button1 = ttk.Button(self, text="Ajouter", command=self)
+        button1.grid(row=12, column=0, columnspan=2, pady=10)
         
         button2 = ttk.Button(self, text="Retour",
                         command=lambda: controleur.pageDemarrage())
-        button2.grid(row=6, column=0, columnspan=2, pady=10)
+        button2.grid(row=12, column=1, columnspan=2, pady=10)
 
 
     #Fonction GetHashCode pour la classe Type

@@ -95,4 +95,26 @@
 </client>
 
 
+
+
+<traversier>
+<nom>traversier n1</nom>
+<capacitePersonne>11</capacitePersonne>
+<anneeFabrication>2000-01-01</anneeFabrication>
+<dateMiseService>2021-01-01</dateMiseService>
+</traversier>
+
+<traversier>
+<nom>traversier n2</nom>
+<capacitePersonne>22</capacitePersonne>
+<anneeFabrication>2002-02-02</anneeFabrication>
+<dateMiseService>2022-02-02</dateMiseService>
+</traversier>
+
+<traversier>
+<nom>traversier n3</nom>
+<capacitePersonne>33</capacitePersonne>
+<anneeFabrication>2003-03-03</anneeFabrication>
+<dateMiseService>2023-03-03</dateMiseService>
+</traversier>
 </projetTraverse>
