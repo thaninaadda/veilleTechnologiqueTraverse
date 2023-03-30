@@ -36,7 +36,7 @@ class Traverse(tk.Frame):
         self.noTraverse_entry.grid(row=1, column=1)
 
         # Label pour la date et Heure
-        self.dateHeure_label = tk.Label(self, text="date et heure")
+        self.dateHeure_label = tk.Label(self, text="Date et heure")
         self.dateHeure_label.grid(row=2, column=0)
 
         # Champ pour la date et Heure
@@ -44,7 +44,7 @@ class Traverse(tk.Frame):
         self.dateHeure_entry.grid(row=2, column=1)
 
         # Label pour le ville de Départ
-        self.villeDepart_label = tk.Label(self, text="ville de Depart")
+        self.villeDepart_label = tk.Label(self, text="ville de Départ")
         self.villeDepart_label.grid(row=3, column=0)
 
         # Champ pour le ville de Départ
@@ -52,7 +52,7 @@ class Traverse(tk.Frame):
         self.villeDepart_entry.grid(row=3, column=1)
 
         # Label pour Inscription de l'employé
-        self.employeInscription_label = tk.Label(self, text="employe Inscription")
+        self.employeInscription_label = tk.Label(self, text="Employé inscrit")
         self.employeInscription_label.grid(row=4, column=0)
 
         # Champ pour Inscription de l'employé

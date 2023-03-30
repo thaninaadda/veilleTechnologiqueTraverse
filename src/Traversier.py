@@ -40,7 +40,7 @@ class Traversier(tk.Frame):
         self.nom_entry.grid(row=1, column=1)
 
         # Label pour la Capacité du Véhicule
-        self.capaciteVehicule_label = tk.Label(self, text="Capacite du vehicule")
+        self.capaciteVehicule_label = tk.Label(self, text="Capacité du Véhicule")
         self.capaciteVehicule_label.grid(row=2, column=0)
 
         # Champ pour la Capacité du Véhicule
@@ -48,7 +48,7 @@ class Traversier(tk.Frame):
         self.capaciteVehicule_entry.grid(row=2, column=1)
 
         # Label pour la Capacité de Personne  au Départ
-        self.capacitePersonneDepart_label = tk.Label(self, text="Capacite en personne")
+        self.capacitePersonneDepart_label = tk.Label(self, text="Capacité en personne")
         self.capacitePersonneDepart_label.grid(row=3, column=0)
 
         # Champ pour la Capacité de Personne  au Départ
@@ -56,7 +56,7 @@ class Traversier(tk.Frame):
         self.capacitePersonneDepart_entry.grid(row=3, column=1)
 
         # Label pour l'Année De Fabrication
-        self.anneeFabrication_label = tk.Label(self, text="Annee de fabrication")
+        self.anneeFabrication_label = tk.Label(self, text="Année de fabrication")
         self.anneeFabrication_label.grid(row=4, column=0)
 
         # Champ pour l'Année De Fabrication

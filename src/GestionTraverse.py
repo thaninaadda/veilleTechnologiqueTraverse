@@ -18,7 +18,7 @@ from Employe import Employe
 # Représente la police choisit pour le projet .
 LARGEFONT =("Verdana", 20)
 
-# Classe GestionTraverse, cette classe appel la page Principale au debut du programme.
+# Classe GestionTraverse, cette classe appel la page Principale au début du programme.
 class GestionTraverse(tk.Tk):
     
     # __init__ function de la classe GestionTraverse

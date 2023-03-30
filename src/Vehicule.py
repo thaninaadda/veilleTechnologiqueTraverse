@@ -29,7 +29,7 @@ class Vehicule(tk.Frame):
         self.listeVehicule = []
     
         # label pour le titre du Véhicule
-        label = ttk.Label(self, text="Ajout d'un vehciule", font=LARGEFONT)
+        label = ttk.Label(self, text="Ajout d'un Véhicule", font=LARGEFONT)
         label.grid(row=0, column=0, columnspan=2, pady=10) # correction de la ligne du label
 
         # Label pour le no d'identification
@@ -48,16 +48,16 @@ class Vehicule(tk.Frame):
         self.marque_entry = tk.Entry(self)
         self.marque_entry.grid(row=2, column=1)
 
-        # Label pour le modele
-        self.modele_label = tk.Label(self, text="Modele:")
+        # Label pour le Modèle
+        self.modele_label = tk.Label(self, text="Modèle:")
         self.modele_label.grid(row=3, column=0)
 
-        # Champ pour le modele
+        # Champ pour le Modèle
         self.modele_entry = tk.Entry(self)
         self.modele_entry.grid(row=3, column=1)
 
         # Label pour la date et Heure
-        self.couleur_label = tk.Label(self, text="couleur:")
+        self.couleur_label = tk.Label(self, text="Couleur:")
         self.couleur_label.grid(row=4, column=0)
 
         # Champ pour la date et Heure
@@ -65,7 +65,7 @@ class Vehicule(tk.Frame):
         self.couleur_entry.grid(row=4, column=1)
 
         # Label pour année 
-        self.annee_label = tk.Label(self, text="Annee:")
+        self.annee_label = tk.Label(self, text="Année:")
         self.annee_label.grid(row=5, column=0)
 
         # Champ pour année
