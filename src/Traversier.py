@@ -71,4 +71,6 @@ class Traversier(tk.Frame):
         button2 = ttk.Button(self, text="Retour",
                         command=lambda: controleur.pageDemarrage())
         button2.grid(row=6, column=0, columnspan=2, pady=10)
+
+        
         

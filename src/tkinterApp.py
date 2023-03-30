@@ -38,7 +38,7 @@ class tkinterApp(tk.Tk):
 
         # iterating through a tuple consisting
         # of the different page layouts
-        for F in (StartPage, Traverse, Traversier, Type, Vehicule, Client, Employe):
+        for F in (StartPage,Type,Vehicule,Traverse,Client,Employe,Traversier):
 
             frame = F(container, self)
 
@@ -91,24 +91,21 @@ class StartPage(tk.Frame):
         # Bouton Type Traverse qui appel justement la page Client.
 
 
-        # button4 = ttk.Button(self, text="Client",
-        #                      command=lambda: controller.show_frame(Client))
-        # button4.grid(row=4, column=6, padx=10, pady=10)
+        button4 = ttk.Button(self, text="Client",
+                             command=lambda: controller.show_frame(Client))
+        button4.grid(row=4, column=6, padx=10, pady=10)
 
         # Bouton Type Traverse qui appel justement la page Employee.
 
 
-        # button5 = ttk.Button(self, text="Employee",
-        #                      command=lambda: controller.show_frame(Employe))
-        # button5.grid(row=5, column=6, padx=10, pady=10)
+        button5 = ttk.Button(self, text="Employee",
+                             command=lambda: controller.show_frame(Employe))
+        button5.grid(row=5, column=6, padx=10, pady=10)
 
         # Bouton Type Traverse qui appel justement la page Traversier.
         button6 = ttk.Button(self, text="Traversier",
                              command=lambda: controller.show_frame(Traversier))
         button6.grid(row=6, column=6, padx=10, pady=10)
-
- 
-
 
 # Driver Code
 app = tkinterApp()

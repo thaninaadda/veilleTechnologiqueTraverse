@@ -58,7 +58,7 @@ class Vehicule(tk.Frame):
         self.couleur_label = tk.Label(self, text="couleur:")
         self.couleur_label.grid(row=4, column=0)
 
-        # Champ pour lcouleur
+        # Champ pour la couleur
         self.couleur_entry = tk.Entry(self)
         self.couleur_entry.grid(row=4, column=1)
 
