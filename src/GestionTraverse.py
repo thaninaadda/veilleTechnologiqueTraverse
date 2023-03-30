@@ -19,7 +19,7 @@ from Employe import Employe
 LARGEFONT =("Verdana", 20)
 
 # Classe tkinterApp, cette classe appel la page Principale au debut du programme.
-class tkinterApp(tk.Tk):
+class GestionTraverse(tk.Tk):
     
     # __init__ function for class tkinterApp
     def __init__(self, *args, **kwargs):
@@ -108,6 +108,6 @@ class StartPage(tk.Frame):
         button6.grid(row=6, column=6, padx=10, pady=10)
 
 # Driver Code
-app = tkinterApp()
+app = GestionTraverse()
 app.mainloop()
 
