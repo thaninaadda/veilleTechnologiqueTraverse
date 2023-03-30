@@ -30,7 +30,7 @@ class Employe(tk.Frame):
         self.listeEmploye = []
         super().__init__(parent)
         # label pour le titre Type Traversier
-        label = ttk.Label(self, text="Ajout d'un type de traverse", font=LARGEFONT)
+        label = ttk.Label(self, text="Ajout d'un type d'un Employé", font=LARGEFONT)
         label.grid(row=0, column=0, columnspan=2, pady=10) # correction de la ligne du label
 
         # Label pour le nom du type

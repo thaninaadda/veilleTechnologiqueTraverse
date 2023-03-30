@@ -73,8 +73,8 @@ class StartPage(tk.Frame):
                              command=lambda: controller.show_frame(Type))
         button1.grid(row=1, column=6, padx=10, pady=10)
 
-        # Bouton Type Traverse qui appel la page Vehicule.
-        button2 = ttk.Button(self, text="Vehicule",
+        # Bouton Type Traverse qui appel la page Véhicule.
+        button2 = ttk.Button(self, text="Véhicule",
                              command=lambda: controller.show_frame(Vehicule))
         button2.grid(row=2, column=6, padx=10, pady=10)
         
@@ -88,8 +88,8 @@ class StartPage(tk.Frame):
                              command=lambda: controller.show_frame(Client))
         button4.grid(row=4, column=6, padx=10, pady=10)
 
-        # Bouton Type Traverse qui appel la page Employee.
-        button5 = ttk.Button(self, text="Employee",
+        # Bouton Type Traverse qui appel la page Employés.
+        button5 = ttk.Button(self, text="Employés",
                              command=lambda: controller.show_frame(Employe))
         button5.grid(row=5, column=6, padx=10, pady=10)
 
