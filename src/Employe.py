@@ -5,10 +5,10 @@
 #
 #
 import tkinter as tk;
-# import src.Personne as Personne;
+import Personne as Personne;
 from tkinter import ttk
 LARGEFONT =("Verdana", 20)
-class Employe(tk.Frame):
+class Employe(tk.Frame, Personne):
     def __init__(self, parent, controleur, nom="", adresse="", ville="", province="", codePostal="",
                   telephone="", courriel="", noEmploye="", nAS="",dateArret=""):
         super().__init__(nom, adresse, ville, province, codePostal, telephone, courriel)

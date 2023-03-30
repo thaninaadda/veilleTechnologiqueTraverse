@@ -6,10 +6,10 @@
 #
 #
 import tkinter as tk;
-import src.Personne as Personne;
+import Personne as Personne;
 from tkinter import ttk
 LARGEFONT =("Verdana", 20)
-class Client(tk.Frame):
+class Client(Personne):
     def __init__(self, parent, controleur, nom="", adresse="", ville="", province="", 
                  codePostal="", telephone="", courriel="", numeroIdentification="", sexe="",dateDeNaissance=""):
         super().__init__(nom, adresse, ville, province, codePostal, telephone, courriel)
