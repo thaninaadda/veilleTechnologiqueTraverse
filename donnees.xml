@@ -1,0 +1,55 @@
+<projetTraverse>
+<vehicule><noIdentification>N1</noIdentification><marque>Nissan</marque><modele>Silvia</modele><couleur>bleu</couleur><annee>2000</annee><immatriculation>g5r4b4</immatriculation></vehicule>
+<vehicule><noIdentification>N2</noIdentification><marque>Nissan</marque><modele>Silvia</modele><couleur>rouge</couleur><annee>2005</annee><immatriculation>g5r4b4</immatriculation></vehicule>
+<vehicule><noIdentification>N3</noIdentification><marque>Nissan</marque><modele>Silvia</modele><couleur>grise</couleur><annee>2005</annee><immatriculation>g5r4b4</immatriculation></vehicule>
+<vehicule><noIdentification>N4</noIdentification><marque>Nissan</marque><modele>Silvia</modele><couleur>grise</couleur><annee>2005</annee><immatriculation>g5r4b4</immatriculation></vehicule>
+
+
+
+<employe>
+<nom>employe1</nom>
+<adresse>rue des cerisiers</adresse>
+<ville>rdl</ville>
+<province>qc</province>
+<codePostal>g5r4b4</codePostal>
+<telephone>000-000-0000</telephone>
+<courriel>employe@gmail.com</courriel>
+<noEmploye>01</noEmploye>
+<dateArret>2022-02-21</dateArret>
+</employe>
+
+<employe>
+<nom>employe2</nom>
+<adresse>rue des cerisiers</adresse>
+<ville>rdl</ville>
+<province>qc</province>
+<codePostal>g5r4b4</codePostal>
+<telephone>000-000-0000</telephone>
+<courriel>employe2@gmail.com</courriel>
+<noEmploye>02</noEmploye><dateArret>2022-04-22</dateArret>
+</employe>
+
+<client>
+<nom>client1</nom>
+<adresse>rue fraser</adresse>
+<ville>rdl</ville>
+<province>province</province>
+<codePostal>g5r4b4</codePostal>
+<telephone>000-000-0000</telephone>
+<courriel>client1@gmail.com</courriel>
+<numeroIdentification>01</numeroIdentification>
+<sexe>F</sexe>
+<dateDeNaissance>2002-02-02</dateDeNaissance>
+</client>
+<client>
+<nom>client2</nom>
+<adresse>rue fraser</adresse>
+<ville>rdl</ville>
+<province>province</province>
+<codePostal>g5r4b4</codePostal>
+<telephone>000-000-0000</telephone>
+<courriel>client2@gmail.com</courriel>
+<numeroIdentification>02</numeroIdentification>
+<sexe>F</sexe><dateDeNaissance>2002-02-05</dateDeNaissance
+></client>
+</projetTraverse>

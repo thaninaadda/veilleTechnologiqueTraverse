@@ -1,5 +1,12 @@
-
+#
+# Nom du Fichier : Personne.py
+# Auteur: Thanina Adda
+# But: contient la classe Personne
+#
+#
 import tkinter as tk
+from tkinter import ttk
+LARGEFONT =("Verdana", 20)
 class Personne:
     def __init__(self, nom, addresse, ville, province, postal_code, telephone, email):
         self.nom = nom
